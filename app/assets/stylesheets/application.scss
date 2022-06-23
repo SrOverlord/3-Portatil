@@ -1,0 +1,194 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+.titulo {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: white;
+    font-size: 80px;
+    font-weight: 200px;
+}
+
+
+
+header{
+
+   display: flex;
+   flex-direction: row;
+   /* background-color: aqua; */
+   justify-content: space-evenly;
+   text-align: center;
+   background-color: white;
+   color:orange;
+   align-content: center;
+}
+
+
+.contSesion{
+    float:right;
+    display: flex;
+    flex-direction: row;
+    padding-top:1em ;
+   list-style: none;
+   text-decoration: none;
+   justify-content: space-evenly;
+   gap: 2em;
+   text-align: center;
+}
+
+.contSesion a{
+color: orange
+
+}
+.contSesion li{
+   font-size: 22;
+   text-decoration: none;
+   color: orange
+}
+.contSaldo{
+   color: black;
+
+}
+
+.contLogo{
+   font-size: 30px;
+}
+
+.menu{
+   list-style: none;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+   color: white;
+   background-color: black;
+}
+.menu a{
+   font-size: 15px;
+   text-decoration: none;
+   color:white
+}
+
+.flex{
+   display: flex;
+   flex-direction: row;
+   /* background-color: aqua; */
+   justify-content: space-evenly;
+}
+
+.flex div{
+   width: 200px;
+   height: 125px;
+   border-radius: 1em;
+   border: 5px solid orange;
+   /* background-color: aqua; */
+   text-align: center;
+   font-weight: 500%;
+   font-size: 20px;
+   background-color: white;
+   color: black;
+}
+
+.flex a{
+     text-decoration: none;
+}
+
+.flex li{
+    list-style: none;
+}
+
+
+#criptos div{
+    border-radius: 1em;
+    width: 100%;
+    text-align: center;
+justify-content: center;
+    height: 200;
+    background-color: whitesmoke;
+    color:black;
+    margin-top: 1em;
+}
+
+.hueco{
+    height: 100;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: arial;
+    //background-color: rgb(250, 177, 42);
+    background-image: url(./fondo-amarillo-anaranjado-abstracto-textura-acuarela_1017-17542.webp);
+}
+
+.formulario {
+    width: 400px;
+    height: 340px;
+    background: white;
+    margin: auto;
+    margin-top: 180px;
+    box-shadow: 7px 13px 37px white;
+    padding: 20px 30px;
+    border-top: 4px solid orange;
+    color: black;
+}
+
+.formulario h4 {
+    margin: 0;
+    text-align: center;
+    height: 40px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid;
+    font-size: 20px;
+}
+
+.contFormCripto{
+    background-color: white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.controls {
+    width: 100%;
+    border: 1px solid orange;
+    margin-bottom: 15px;
+    padding: 11px 10px;
+    background: #252323;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+
+.button {
+    width: 100%;
+    height: 40px;
+    background: orange;
+    border: none;
+    color: white;
+    margin-bottom: 16px;
+}
+
+.formulario p {
+    height: 40px;
+    text-align: center;
+    border-bottom: 1px solid;
+    text-decoration: none;
+    font-size: 14px;
+    color: black;
+}
+
+.aux {
+    margin-top: 30px;
+    height: 40px;
+    text-align: center;
+    border-bottom: 1px solid;
+    text-decoration: none;
+    font-size: 14px;
+    color: black;
+}
+
+.formulario p:hover {
+    text-decoration: underline;
+}

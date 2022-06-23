@@ -1,0 +1,15 @@
+<h1>Comprar Cripto?</h1>
+
+
+<%# Cogemos valores por parametro %>
+<% @nombre = params[:nombre]%>
+<% @valor = params[:valor] %>
+
+<div class="contFormCripto">
+<%= render "form", wallet_cripto: @wallet_cripto %>
+</div>
+<br>
+
+<div>
+  <%# <%= link_to "Back to wallet criptos", wallet_criptos_path %> %>
+</div>

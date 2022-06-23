@@ -1,0 +1,61 @@
+
+<h1>Compra Criptomoneda</h1>
+
+
+<button id= "BotonNumero" onclick="generarNumero(100)"> Tablas </button>
+
+<div class="flex">
+<div class = "Cripto 1">
+<h4>Bitcoin</h4> 
+<p id="valor1">1 </p>
+<li><%= link_to 'Comprar BTC ', new_wallet_cripto_path(:nombre => "BITCOIN", :valor => "110" ) %></li>
+</div>
+
+
+
+<div class = "Cripto 2">
+<h4>DogeCoin</h4> 
+<p id="valor2"> 2</p>
+<li><%= link_to 'Comprar DOGE ', new_wallet_cripto_path(:nombre => "DOGECOIN", :valor => "120" ) %></li>
+</div>
+
+
+
+<div class = "Cripto 3">
+<h4>Luna</h4> 
+<p id="valor3"> 3</p>
+<li><%= link_to 'Comprar LUNA ', new_wallet_cripto_path(:nombre => "LUNA", :valor => "130" ) %></li>
+</div>
+
+</div>
+<%# Mostramos Criptos %>
+<div class="hueco">
+
+</div>
+<div id="criptos">
+    <% @wallet_cripto = WalletCripto.all %>
+  <% @wallet_cripto.each do |wallet_cripto| %>
+    <%= render wallet_cripto %>
+  <% end %>
+</div>
+
+</div>
+
+<script >
+// document.getElementById("BotonNumero").addEventListener("click",generarNumero)
+    var numero1 = document.getElementById("valor1");
+    var numero2 = document.getElementById("valor2");
+    var numero3 = document.getElementById("valor3");
+
+function generarNumero(num){
+    // while (true){
+        // // console.log("hola");
+        numero1.innerHTML = num - 1
+        numero2.innerHTML = num
+        numero3.innerHTML = num +2
+        setTimeout(() => {console.log("hola");
+        generarNumero(num+1)},1000);
+    // }
+}
+
+</script>
