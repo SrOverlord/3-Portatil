@@ -1,0 +1,69 @@
+{% extends "padre.html" %}
+
+{% block linkCSS %}
+<link rel="stylesheet" href="../static/css/nuevaCripto.css" />
+{% endblock %}
+
+
+{% block usuarioCuenta %}
+<!-- _________Tipo de Cuenta y acciones__________ -->
+
+{{ idUsuario.nombre }}
+
+{% endblock %}
+
+{% block accionesTipocuenta %}
+<!-- Acciones de Cuenta -->
+
+
+{% if idUsuario.tipo == "Anonimo" %}
+<li><a href="../registroInicio.php">Iniciarsesion</a></li>
+{% endif %}
+
+{% if idUsuario.tipo == "Registrado" %}
+<li><a href="">Opcion</a></li>
+{% endif %}
+
+{% if idUsuario.tipo == "Moderador" %}
+<li><a href="../comentarios.php">Borrar y Editar Comentarios</a></li>
+
+{% endif %}
+
+{% if idUsuario.tipo == "Gestor" %}
+<li><a href="../productos.php">Borrar y Editar Comentarios</a></li>
+<li><a href="../nuevaCripto.php">Añadir productos </a></li>
+
+{% endif %}
+
+{% if idUsuario.tipo == "Super" %}
+<li><a href="">Modficar Permisos</a></li>
+
+{% endif %}
+
+
+{% endblock %}
+
+
+{% block central %}
+
+<main>
+    <div class="contFormCripto">
+
+        <form class="formularioCripto" action="./nuevaCripto.php" method="post" enctype="multipart/form-data">
+
+            <label>Nombre:</label><br>
+            <input type="text" id="nombreIN" name="nombreIN" value="" required><br>
+            
+            <label>Descripcion:</label><br>
+            <input type="text" id="descripIN" name="descripIN" value="" required><br>
+
+            <label>Foto Portada</label><br>
+            <input type="file" id="foto" name="foto" value="" required><br>
+            
+              
+            <input id="crearCripto" type="submit" name="crearCripto" value="Save">
+         </form>
+    </div>
+</main>
+
+{% endblock %}

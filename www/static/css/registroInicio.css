@@ -1,0 +1,309 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Century Gothic";
+} */
+
+/*__________________________Header________________________*/
+
+header {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    gap: 1em;
+    grid-auto-rows: minmax(50px, auto);
+    align-items: stretch;
+    background-size: cover;
+    background-image: url("../image/fondo.jpg");
+    border-bottom: 10px solid rgba(252, 163, 17, 1);
+  }
+  /*_______________________Header-Logo_____________________*/
+  
+  .contenedor-logo {
+    margin-left: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  
+  .contenedor-logo > img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  
+  .contenedor-titulo-menu {
+    margin-top: 1em;
+    margin-right: 2em;
+    margin-bottom: 1em;
+    display: grid;
+    grid-template-rows: repeat(3fr);
+    border-top: 10px solid rgba(252, 163, 17, 1);
+  }
+  
+  /*_____________Header Titulo_________________*/
+  
+  .contenedor-titulo {
+    grid-row: 1/4;
+    border-bottom: 10px solid rgba(252, 163, 17, 1);
+  }
+  
+  .contenedor-titulo > h1 {
+    font-family: "Century Gothic";
+    padding-top: 1em;
+    text-align: center;
+    font-size: 80px;
+    font-weight: 200;
+  }
+
+  
+.contenedorUsuario {
+    float: right;
+    list-style: none;
+    display: none;
+  }
+  
+  /*__________________Header Menu________________*/
+  
+  .contenedor-menu {
+    grid-row: 4/5;
+    background-color: rgba(20, 33, 61, 1);
+    padding-right: 1em;
+  }
+  
+  .contenedor-menu img {
+    margin-top: 1em;
+    margin-right: 1em;
+    float: right;
+    width: 3em;
+    height: 3em;
+  }
+  .contenedor-menu nav {
+    width: 80%;
+    float: left;
+  }
+  
+  .contenedor-menu > nav a {
+    text-decoration: none;
+    font-family: "Century Gothic";
+    color: inherit;
+    font-size: 15px;
+  }
+  .contenedor-menu > nav li {
+    display: inline-block;
+    margin-top: 1em;
+    width: 20%;
+    padding: 5px 10px;
+    background-color: #000;
+    border: 1px solid rgb(54, 54, 54);
+    color: #fff;
+    text-align: center;
+  }
+  
+  .contenedor-menu  li:hover{
+   
+    background-color: rgba(252, 163, 17, 1);
+    color: white;
+  }
+
+/* _______________________Main______________________ */
+.ContenedorGlobal{
+    /* Establecemos el fondo  */
+    background-image: url("../image/fondo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.ContenedorGlobal main{
+    text-decoration: none;
+    font-family: "Century Gothic";
+    width: 95%;
+    padding: 20px;
+    margin: auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    
+}
+
+.contenedorTodo{
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+}
+
+.cajaAuxAtras{
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color:  rgba(20, 33, 61, 1);
+
+}
+
+.cajaAuxAtras div{
+    margin: 100px 40px;
+    color: white;
+    transition: all 500ms;
+}
+
+
+.cajaAuxAtras div p,
+.cajaAuxAtras button{
+    margin-top: 30px;
+}
+
+.cajaAuxAtras div h3{
+    font-weight: 400;
+    font-size: 26px;
+}
+
+.cajaAuxAtras div p{
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.cajaAuxAtras button{
+    padding: 10px 40px;
+    border: 2px solid #fff;
+    font-size: 14px;
+    background: transparent;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+    transition: all 300ms;
+}
+
+.cajaAuxAtras button:hover{
+    background: rgba(252, 163, 17, 1);
+    color: #fff;
+}
+
+
+.contenedorInicioRegistro{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 380px;
+    position: relative;
+    top: -185px;
+    left: 10px;
+    
+    /*La transicion va despues del codigo JS*/
+    transition: left 500ms ease-in;
+}
+
+
+
+/* ______________Definimos estilo del Formulario_________ */
+.contenedorInicioRegistro form{
+    width: 100%;
+    padding: 80px 20px;
+    background: white;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.contenedorInicioRegistro form h2{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgba(252, 163, 17, 1);
+}
+
+.contenedorInicioRegistro form input{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background: #F2F2F2;
+    font-size: 16px;
+    outline: none;
+}
+
+.contenedorInicioRegistro form button{
+    padding: 10px 40px;
+    margin-top: 40px;
+    border: none;
+    font-size: 14px;
+    background:rgba(252, 163, 17, 1);
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+}
+
+
+
+/* ______________Formularios___________ *
+/
+/* Mostramos el bloque de login Inicialmente */
+.formularioInicio{
+    opacity: 1;
+    display: block;
+}
+/* Ocultamos el  formulario de registro en el incio */
+
+.formularioRegistro{
+    display: none;
+}
+ 
+
+
+@media screen and (max-width: 850px){
+
+    main{
+        margin-top: 50px;
+    }
+
+    .cajaAuxAtras{
+        max-width: 350px;
+        height: 300px;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .cajaAuxAtras div{
+        margin: 0px;
+        position: absolute;
+    }
+
+
+    /*Formularios*/
+
+    .contenedorInicioRegistro{
+        top: -10px;
+        left: -5px;
+        margin: auto;
+    }
+
+    .contenedorInicioRegistro form{
+        position: relative;
+    }
+} 
+
+/*__________________Footer____________________________*/
+
+footer {
+    width: 100%;
+    min-height: 4em;
+    padding-top: 2em;
+    height: auto;
+    background-color: #000;
+    color: #fff;
+  }
+  
+  footer > p {
+    margin: 0;
+    text-align: center;
+    font-family: "Century Gothic";
+    font-size: 18px;
+  }
+  

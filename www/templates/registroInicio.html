@@ -1,0 +1,60 @@
+{% extends "padre.html" %}
+
+
+{% block linkCSS %}
+<link rel="stylesheet" href="../static/css/registroInicio.css">
+{% endblock %}
+
+
+
+{% block central %}
+
+<div class="ContenedorGlobal">
+
+    <main>
+
+        <div class="contenedorTodo">
+            <div class="cajaAuxAtras">
+                <div class="cajaAuxAtrasIniciar">
+                    <h3>Ya tienes una cuenta?</h3>
+                    <p>Inicia sesión para entrar CrytoShop</p>
+                    <button id="btn__iniciar-sesion">Iniciar Sesion</button>
+                </div>
+                <div class="cajaAuxAtrasRegistro">
+                    <h3>Aun no tienes una cuenta?</h3>
+                    <p>Regístrate para que puedas iniciar sesion</p>
+                    <button id="btn__registrarse">Registrar</button>
+                </div>
+            </div>
+
+            <!--Formulario de Login y registro-->
+            <div class="contenedorInicioRegistro">
+                <!--Login-->
+                <!-- <form action="" class="formularioInicio"> -->
+                    <form action="../registroInicio.php" method="post" class="formularioInicio">
+                    <h2>Iniciar Sesion</h2>
+                    <input name="correoIni" type="text" placeholder="Correo Electronico"/>
+                    <input name="passIni" type="password" placeholder="Contraseña"/>
+                    <input type="submit" value="Entrar"/>
+
+                </form>
+
+                <!--Register-->
+                <form action="../registroInicio.php" method="post" class="formularioRegistro">
+                    <h2>Registrarse</h2>
+                    <input name="nombreReg" type="text" placeholder="Nombre Usuario"/>
+                    <input name="correoReg" type="text" placeholder="Correo Electronico"/>
+                    <input name="passReg" type="password" placeholder="Contraseña"/>
+                   <input type="submit" value="Registrars"/>
+                </form>
+            </div>
+        </div>
+    </main>
+
+</div>
+
+{% endblock %}
+
+{% block js %}
+<script src="../static/js/registroInicio.js"></script>
+{% endblock %}

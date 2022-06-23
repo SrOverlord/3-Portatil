@@ -1,0 +1,175 @@
+{% extends "padre.html" %}
+
+{% block linkCSS %}
+<link rel="stylesheet" href="../static/css/producto.css" />
+{% endblock %}
+
+
+{% block usuarioCuenta %}
+<!-- _________Tipo de Cuenta y acciones__________ -->
+
+{{ idUsuario.nombre }}
+
+{% endblock %}
+
+{% block accionesTipocuenta %}
+<!-- Acciones de Cuenta -->
+
+
+{% if idUsuario.tipo == "Anonimo" %}
+<li><a href="../registroInicio.php">Iniciarsesion</a></li>
+{% endif %}
+
+{% if idUsuario.tipo == "Registrado" %}
+<li><a href="">Opcion</a></li>
+{% endif %}
+
+{% if idUsuario.tipo == "Moderador" %}
+<li><a href="../comentarios.php">Borrar y Editar Comentarios</a></li>
+
+{% endif %}
+
+{% if idUsuario.tipo == "Gestor" %}
+<li><a href="../productos.php">Borrar y Editar Comentarios</a></li>
+<li><a href="../nuevaCripto.php">Añadir productos </a></li>
+
+{% endif %}
+
+{% if idUsuario.tipo == "Super" %}
+<li><a href="">Modficar Permisos</a></li>
+
+{% endif %}
+
+
+{% endblock %}
+
+{% block central %}
+
+<div class="content" id="Centro">
+    <main id="Centro-Grid">
+
+        <img src="{{producto['ruta']}}" />
+
+        <h1>{{producto['nombre']}}</h1>
+        <h2>CriptoShop</h2>
+        <h3>Precio</h3>
+
+        <p>
+            <br />El 1 de noviembre de 2008 una persona (o grupo de personas), identificada con el seudónimo de
+            Satoshi Nakamoto, envió un mensaje a una lista de correo sobre criptografía describiendo un proyecto
+            para crear una moneda digital
+            que sirviera para contabilizar y transferir valor. De este modo nacía Bitcoin, la primera
+            criptomoneda, una divisa alternativa con un control descentralizado, sin que sea respaldado, ni
+            controlado, por ningún Estado o banco central.
+            <br /><br /> El control de las transacciones realizadas con la moneda se realiza a través de una
+            base de datos descentralizada, una cadena de bloques (en inglés blockchain), que funciona como una
+            base de datos de transacciones financieras
+            públicas que no necesita de intermediarios. Esta cadena de bloques se suele describir como un libro
+            contable digital, distribuido y a prueba de manipulaciones, en el que queda reflejado de forma
+            permanente y verificable el histórico
+            de todas las transacciones realizadas
+
+            <br /><br /> Mas informacion en:
+            <a href="https://es.wikipedia.org/wiki/Historia_de_bitcoin">Historia_de_bitcoin</a>
+        </p>
+        <a href="../producto_imprimir.php" class="boton_imprimir">Imprimir</a>
+
+        <button class="botonComent" id="BotonResenas"><img src="../static/image/comentarios.png" /></button>
+    </main>
+
+    <aside id="Centro-aside">
+        <nav>
+            <ul>
+                <li><a href="https://www.xataka.com/basics/criptomonedas-que-como-funcionan-que-otras-existen-bitcoin">Que
+                        son las criptomonedas ?</a></li>
+                <li><a
+                        href="https://www.xataka.com/especiales/que-es-blockchain-la-explicacion-definitiva-para-la-tecnologia-mas-de-moda">Que
+                        es BlockChain?</a></li>
+                <li><a href="https://es.wikipedia.org/wiki/Historia_de_bitcoin">Cuando fueron creadas?</a></li>
+                <li><a
+                        href="https://academy.bit2me.com/legalidad-en-bitcoin/#:~:text=La%20respuesta%20corta%20es%3A%20No,que%20la%20regulaci%C3%B3n%20es%20homog%C3%A9nea.">Legalidad
+                        de las criptomonedas</a></li>
+                <li><a
+                        href="https://es.dailyforex.com/forex-articles/2017/11/c%C3%B3mo-beneficiarse-de-las-criptomonedas-parte-1-12-de-noviembre-2017/85562">Como
+                        puedes beneficiarte</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+</div>
+
+<!-- Para esta practica no tendren en cuenta la presentacion de las fotos -->
+
+<div class="GaleriaFotos" id="galeria">
+
+    
+    {% for foto in fotos %}
+    <!-- If necesario para evitar la creacion extra de apartados vacios -->
+    {% if foto != fotos[0] %}
+
+    <img src="{{foto['ruta']}}" /></a>
+    {% endif %}
+    {% endfor %}
+</div>
+
+
+<div class="Reseñas" id="ContReseñas">
+    <!-- Cajas de reseña -->
+    <div class="cajasReseñas" id="Cajas">
+        {% for comentario in comentarios %}
+        {% if comentario != comentarios[0] %}
+        <div>
+            <h3>{{comentario['nombre']}}</h3>
+            <h4>{{comentario['date']}}</h4>
+            <h4>{{comentario['email']}}</h4>
+            <p>{{comentario['texto']}}</p>
+            <!-- En caso de modificado -->
+            {% if comentario['modificado'] == "true" %}
+            <p class="NotModificado"><i>Mensaje Editado por Moderador</i></p>
+            {% endif %}
+
+            {% if idUsuario.tipo == "Moderador" %}
+            <a href="../editarComentario.php?idComentario={{comentario['id']}}"><img id="botonModificarComentario" src="/static/image/lapiz.png"> </a>
+            <a href="../eliminarComentario.php?pro={{ nombrePro }}&idComentario={{comentario['id']}}"><img id="botonEliminarComentario"src="/static/image/eliminar.png"> </a>
+            {% endif %}
+        </div>
+        {% endif %}
+        {% endfor %}
+
+    </div>
+    <!-- Caja de crear reseña -->
+    {% if idUsuario.tipo == "Anonimo" %}
+    <a class="refLoginComentario" href="../registroInicio.php">Iniciar Sesion</a>
+
+    {% else %}
+
+    <form action="../addComentario.php" method="post" class="RellenarDatos " id="formReseña">
+        <!-- Datos ya supuestamente autorellenos por el usuario registrado -->
+        <input type="hidden" id="nombre" name="nombre" value="{{ idUsuario.nombre }}">
+        <input type="hidden" id="email" name="email" value="{{ idUsuario.email }}">
+        <input type="hidden" id="idPro" name="idPro" value="{{ producto.id }}">
+        <input type="hidden" id="nombrePro" name="nombrePro" value="{{ producto.nombre }}">
+        <div class="dato-texto"><label for="comentario">Comentario</label>
+            <textarea type="text" id="textoComentario" name="textoComentario" placeholder="Escriba el comentario" required></textarea>
+        </div>
+
+        <input type="submit" id="anadirComentario" value="Enviar">
+
+
+    </form>
+    {% endif %}
+
+
+</div>
+
+<div id="tacos">
+    {% for taco in tacos %}
+    <p>{{taco['taco']}}</p>
+    {% endfor %}
+</div>
+
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="./static/js/producto.js"></script>
+{% endblock %}

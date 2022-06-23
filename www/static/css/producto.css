@@ -1,0 +1,452 @@
+/*__________________________Header________________________*/
+
+header {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  gap: 1em;
+  grid-auto-rows: minmax(50px, auto);
+  align-items: stretch;
+  background-size: cover;
+  background-image: url("../image/fondo.jpg");
+  border-bottom: 10px solid rgba(252, 163, 17, 1);
+}
+/*_______________________Header-Logo_____________________*/
+
+.contenedor-logo {
+  margin-left: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.contenedor-logo > img {
+  width: 100%;
+  height: 100%;
+}
+
+
+.contenedor-titulo-menu {
+  margin-top: 1em;
+  margin-right: 2em;
+  margin-bottom: 1em;
+  display: grid;
+  grid-template-rows: repeat(3fr);
+  border-top: 10px solid rgba(252, 163, 17, 1);
+}
+
+/*_____________Header Titulo_________________*/
+
+.contenedor-titulo {
+  grid-row: 1/4;
+  border-bottom: 10px solid rgba(252, 163, 17, 1);
+}
+
+.contenedor-titulo > h1 {
+  font-family: "Century Gothic";
+  padding-top: 1em;
+  text-align: center;
+  font-size: 80px;
+  font-weight: 200;
+}
+
+/*__________________Header Menu________________*/
+
+.contenedor-menu {
+  grid-row: 4/5;
+  background-color: rgba(20, 33, 61, 1);
+  padding-right: 1em;
+}
+
+.contenedor-menu img {
+  margin-top: 1em;
+  margin-right: 1em;
+  float: right;
+  width: 3em;
+  height: 3em;
+}
+.contenedor-menu nav {
+  width: 80%;
+  float: left;
+}
+
+.contenedor-menu > nav a {
+  text-decoration: none;
+  font-family: "Century Gothic";
+  color: inherit;
+  font-size: 15px;
+}
+.contenedor-menu > nav li {
+  display: inline-block;
+  margin-top: 1em;
+  width: 20%;
+  padding: 5px 10px;
+  background-color: #000;
+  border: 1px solid rgb(54, 54, 54);
+  color: #fff;
+  text-align: center;
+}
+
+.contenedor-menu  li:hover{
+ 
+  background-color: rgba(252, 163, 17, 1);
+  color: white;
+}
+
+.boton_imprimir {
+  float: right;
+  text-decoration: none;
+  padding: 8px;
+  background-color: rgba(20, 33, 61, 1);
+  color: white;
+  border: 2px solid rgba(252, 163, 17, 1);
+}
+
+.boton_imprimir:hover {
+  background-color: rgba(252, 163, 17, 1);
+  color: black;
+}
+
+.content {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 80% 20%;
+  grid-auto-rows: minmax(100px, auto);
+  align-items: stretch;
+  border-bottom: 10px solid rgba(252, 163, 17, 1);
+}
+/* _____________________Menu Usuario _____________________ */
+.contenedorUsuario {
+  float: right;
+  list-style: none;
+}
+
+.opciones {
+  padding: 0;
+  margin: 0;
+  padding-top: 1em;
+  text-align: center;
+}
+
+.tituloCuenta {
+  background-color: #000;
+  color: rgba(229, 229, 229, 1);
+  display: block;
+  list-style: none;
+  padding: 10px 15px;
+  padding-right: 10px;
+  /* margin: 10px; */
+  text-decoration: none;
+  min-width: 100px;
+  min-height: 2em;
+
+}
+
+.opciones li a {
+  background-color: #000;
+  color: rgba(229, 229, 229, 1);
+  display: block;
+  list-style: none;
+  padding: 10px 15px;
+  padding-right: 10px;
+  /* margin: 10px; */
+  text-decoration: none;
+  min-width: 100px;
+
+
+}
+.botonSalirSesion{
+  background-color: #000;
+  color: rgba(229, 229, 229, 1);
+  display: block;
+  list-style: none;
+  padding: 10px 15px;
+  padding-right: 10px;
+  /* margin: 10px; */
+  text-decoration: none;
+  min-width: 100px;
+}
+.botonSalirSesion:hover{
+  background-color: rgba(252, 163, 17, 1);
+
+}
+
+
+.opciones li form{
+  background-color: #000;
+  color: rgba(229, 229, 229, 1);
+  display: block;
+  list-style: none;
+  padding: 10px 15px;
+  padding-right: 10px;
+  /* margin: 10px; */
+  text-decoration: none;
+  min-width: 100px;
+}
+
+.opciones li a:hover {
+  background-color: aliceblue;
+}
+
+.opciones > li {
+  list-style: none;
+  float: left;
+}
+
+.opciones li ul {
+  list-style: none;
+  display: none;
+  position: absolute;
+  min-width: 100px;
+  margin-right: 10px;
+  padding-left: 0;
+
+}
+
+.opciones li:hover>ul {
+  display: block;
+  list-style: none;
+
+}
+
+.opciones li ul li {
+  position: relative;
+  list-style: none;
+
+}
+
+.opciones li ul li ul {
+  right: 110px;
+  top: 0px;
+}
+
+
+/*__________________________Main__________________*/
+
+main {
+  font-family: "Arial";
+  padding: 2em;
+  background-color: rgba(20, 33, 61, 1);
+  color: #fff;
+  font-family: "Century Gothic";
+  border-right: 10px solid rgba(252, 163, 17, 1);
+}
+
+main img {
+  float: right;
+  width: 11em;
+  height: 11em;
+}
+main h1 {
+  font-size: 3em;
+}
+main p {
+  font-size: 1.2em;
+}
+main a {
+  color: rgba(252, 163, 17, 1);
+}
+
+main div:hover {
+  border: 3px solid rgba(252, 163, 17, 1);
+}
+
+/*___________________________Aside____________________*/
+aside {
+  width: 100%;
+  background-color: rgba(229, 229, 229, 1);
+}
+
+aside > nav a {
+  font-family: "Century Gothic";
+  font-size: 1.4em;
+  text-decoration: none;
+}
+aside li {
+  margin-bottom: 2.5em;
+}
+
+/*___________________Galeria de Fotos_______*/
+
+.GaleriaFotos {
+  width: 100%;
+  background-color: rgba(229, 229, 229, 1);
+  border-bottom: 10px solid rgba(252, 163, 17, 1);
+}
+
+.GaleriaFotos  img {
+  padding: 0.5em;
+  padding-right: 1.5em;
+  padding-left: 1.5em;
+  width: 300px;
+  height: 300px;
+}
+
+
+
+
+/*__________________ Reseñas_______________*/
+
+#BotonResenas{
+  width: auto;
+  height: auto;
+  float: left;
+  appearance: none ;
+  border: 2px solid rgba(252, 163, 17, 1);
+  background-color: transparent;
+  cursor:pointer;
+}
+
+.botonComent img{
+  width: 50px;
+  height: 50px;
+}
+.NotModificado{
+  color:rgb(51, 141, 16);
+}
+
+#ContReseñas{
+  display: none;
+  width: 100%;
+  height: auto;
+  /* border: 1px solid rgb(252, 17, 17); */
+  background-color: rgba(20, 33, 61, 1);
+  border-bottom: 10px solid rgba(252, 163, 17, 1);
+  font-family: "Century Gothic";
+}
+
+
+#ContReseñas .cajasReseñas{
+  min-height: auto;
+  max-height: 50em;
+  overflow-y: auto ;
+  width: 70%;
+  /* border: 1px solid rgb(17, 252, 48);  */
+  padding-left: 11em;
+}
+
+#ContReseñas .cajasReseñas div{
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border-radius: 1em;
+  max-height: 20em;
+  overflow-y: auto;
+  color: black;
+  background-color:  rgba(229, 229, 229, 1);
+  width: 100%;
+  align-items: center;
+}
+
+
+
+#ContReseñas .RellenarDatos{
+  border: 3px solid  rgba(252, 163, 17, 1);
+  color: white;
+  margin-top: 4em;
+  margin-left: 10em;
+  margin-right: 10em;
+  margin-bottom:4em;
+  padding: 1em;
+  text-align: start;
+}
+
+#ContReseñas .RellenarDatos .dato-nombre{
+  /* border: 3px solid rgb(166, 17, 252); */
+  color: white;
+  margin-left: 3em;
+  text-align: start;
+}
+#ContReseñas .RellenarDatos .dato-email{
+  /* border: 3px solid rgb(166, 17, 252); */
+  color: white;
+  margin-left: 4.5em;
+  text-align: start;
+}
+#ContReseñas .RellenarDatos .dato-texto{
+  /* border: 3px solid rgb(166, 17, 252); */
+  color: white;
+  margin-left: 1em;
+  text-align: start;
+}
+
+#ContReseñas .RellenarDatos .dato-texto textarea{
+  width:100%;
+  height:5em;
+}
+
+#Cajas div{
+position: relative;
+}
+
+
+
+#botonModificarComentario{
+width: 40px;
+height: 40px;
+position: absolute;
+top:0;
+right: 40px;
+}
+#botonEliminarComentario{
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top:0;
+  right: 0;
+}
+
+
+
+#ContReseñas #anadirComentario{
+  margin-top: 2em;
+  float: right;
+  font-family: "Century Gothic";
+  background-color: rgba(20, 33, 61, 1);
+  color: white;
+  border: 2px solid rgba(252, 163, 17, 1);
+  cursor: pointer;
+ 
+}
+
+.refLoginComentario{
+ 
+  text-decoration: none;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  color:#fff;
+  align-self: center;
+  background-color:rgba(252, 163, 17, 1) ;
+  float:right;
+}
+
+.LoginComentario{
+  width: auto;
+  color:#fff;
+}
+
+#tacos{
+  display: none;
+}
+
+
+
+/*__________________Footer____________________________*/
+
+footer {
+  width: 100%;
+  min-height: 4em;
+  padding-top: 2em;
+  height: auto;
+  background-color: #000;
+  color: #fff;
+}
+
+footer > p {
+  margin: 0;
+  text-align: center;
+  font-family: "Century Gothic";
+  font-size: 18px;
+}

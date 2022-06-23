@@ -1,0 +1,121 @@
+{% extends "padre.html" %}
+
+{% block linkCSS %}
+<link rel="stylesheet" href="../static/css/cuenta.css" />
+{% endblock %}
+
+
+{% block usuarioCuenta %}
+<!-- _________Tipo de Cuenta y acciones__________ -->
+
+{{ idUsuario.nombre }}
+
+{% endblock %}
+
+{% block accionesTipocuenta %}
+<!-- Acciones de Cuenta -->
+
+
+{% if idUsuario.tipo == "Anonimo" %}
+<li><a href="../registroInicio.php">Iniciarsesion</a></li>
+{% endif %}
+
+{% if idUsuario.tipo == "Registrado" %}
+<li><a href="">Opcion</a></li>
+{% endif %}
+
+{% if idUsuario.tipo == "Moderador" %}
+<li><a href="../comentarios.php">Borrar y Editar Comentarios</a></li>
+
+{% endif %}
+
+{% if idUsuario.tipo == "Gestor" %}
+<li><a href="../productos.php">Borrar y Editar Comentarios</a></li>
+<li><a href="../nuevaCripto.php">Añadir productos </a></li>
+
+{% endif %}
+
+{% if idUsuario.tipo == "Super" %}
+<li><a href="">Modficar Permisos</a></li>
+
+{% endif %}
+
+
+
+{% endblock %}
+
+
+
+{% block central %}
+<div class="ContenedorGlobal">
+
+    <main>
+
+        {% if editar == "Si" %}
+
+        <div class="formulario">
+            
+            {% if error != "No" %}
+            <h3>
+                {{ error }}
+            </h3>
+            {% endif %}
+
+
+            <h1>Edicion Datos Cuenta</h1>
+
+            
+            
+            <form action="../cuenta.php" method="post" class="RellenarDatos " id="formReseña">
+                <!-- Nombre Input -->
+                <label>Nombre</label>
+                <input type="text" id="nombre" name="nombre" value="{{ idUsuario.nombre }}"><br>
+                
+                <!--  Email Input -->
+                <label>Email</label>
+                <input type="email" id="email" name="email" value="{{ idUsuario.email }}"><br>
+                
+                <input id="guardarEdicion" type="submit" name="guardarEdicion" value="Save">
+            </form>
+            
+            <form action="../cuenta.php" method="post" class="RellenarDatos " id="formReseña">
+                <!-- Contrasena -->
+                <label>Nueva Contrasena</label>
+                <input type="text" id="pass1" name="pass1"><br>
+                <label>Repite Contrasena</label>
+                <input type="text" id="pass2" name="pass2"><br>
+                <input id="guardarEdicionPass" type="submit" name="guardarEdicionPass" value="Save">
+            </form>
+            
+            
+        </div>
+        {% endif %}
+        
+
+        {% if editar == "No" %}
+
+        <div class="formulario">
+            <h1>Datos Cuenta</h1>
+            <form action="../cuenta.php?editar" method="post" class="Mostrar Datos " >
+                <!-- Nombre Input -->
+                <label>Nombre: {{ idUsuario.nombre }} </label><br><br>
+                <!--  Email Input -->
+                <label>Email: {{ idUsuario.email }}</label><br>
+                <input type="hidden" id="editDatos" name="editDatos" value=""><br>
+                <input  type="submit" name="guardarEdicion" value="Editar">
+            </form>
+
+
+        </div>
+        {% endif %}
+        
+        
+        
+        
+        
+        
+    </main>
+
+
+</div>
+{% endblock %}

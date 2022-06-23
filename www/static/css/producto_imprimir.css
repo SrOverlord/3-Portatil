@@ -1,0 +1,174 @@
+header{
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  gap: 1em;
+  grid-auto-rows: minmax(50px, auto);
+  align-items: stretch;
+  background-size: cover;
+}
+
+.contenedor-logo {
+  margin-left: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+/* Establecemos un filtro de escala de grises */
+.contenedor-logo > img {
+  width: 100%;
+  height: 100%;
+  filter: grayscale(100%);
+}
+
+.contenedor-titulo-menu {
+  margin-top: 1em;
+  margin-right: 2em;
+  margin-bottom: 1em;
+  display: grid;
+  grid-template-rows: repeat(3fr);
+  border-top: 10px solid black;
+}
+
+.contenedor-titulo {
+  grid-row: 1/4;
+  border-bottom: 10px solid black;
+}
+
+.contenedor-titulo > h1 {
+  font-family: "Century Gothic";
+  padding-top: 1em;
+  text-align: center;
+  font-size: 80px;
+  font-weight: 200;
+}
+
+/* Hacemos  invsible el menu*/
+
+.contenedor-menu {
+  visibility: hidden;
+  grid-row: 4/5;
+  background-color: white;
+  padding-right: 1em;
+}
+
+.contenedor-menu img {
+  margin-top: 1em;
+  margin-right: 1em;
+  float: right;
+  width: 3em;
+  height: 3em;
+}
+.contenedor-menu nav {
+  width: 80%;
+  float: left;
+}
+
+.contenedor-menu > nav a {
+  text-decoration: none;
+  font-family: "Century Gothic";
+  color: inherit;
+  font-size: 15px;
+}
+.contenedor-menu > nav li {
+  display: inline-block;
+  margin-top: 1em;
+  width: 20%;
+  padding: 5px 10px;
+  background-color: #000;
+  border: 1px solid rgb(54, 54, 54);
+  color: black;
+  text-align: center;
+}
+
+.contenedor-menu li:hover {
+  background-color: black;
+  color: black;
+}
+
+/* Ocultamos boton de imprimir */
+.boton_imprimir {
+  display: none;
+  float: right;
+  text-decoration: none;
+  padding: 8px;
+  background-color: black;
+  color: black;
+  border: 2px solid black;
+}
+/* 
+.boton_imprimir:hover {
+  background-color: black;
+  color: black;
+} */
+
+.content {
+  width: 100%;
+  height: auto;
+  align-items: stretch;
+}
+
+main {
+  font-family: "Arial";
+  padding: 2em;
+  margin: 2em;
+  background-color: white;
+  color: black;
+  font-family: "Century Gothic";
+  border: 10px solid black;
+}
+
+main img {
+  filter: grayscale(100%);
+  float: right;
+  width: 11em;
+  height: 11em;
+}
+main h1 {
+  font-size: 3em;
+}
+main p {
+  font-size: 1.2em;
+}
+main a {
+  pointer-events: none;
+  color: black;
+}
+
+main div:hover {
+  border: 3px solid black;
+}
+
+/* Ocultamos pero sin que ocupe espacio su parte */
+aside {
+  display: none;
+  width: 100%;
+  background-color: rgba(229, 229, 229, 1);
+}
+
+/* 
+.aside > nav a {
+  font-family: "Century Gothic";
+  font-size: 1.4em;
+  text-decoration: none;
+}
+.aside li {
+  margin-bottom: 2.5em;
+} */
+
+footer {
+  width: 100%;
+  min-height: 4em;
+  padding-top: 2em;
+  height: auto;
+  background-color: white;
+  color: black;
+}
+
+footer > p {
+  margin: 0;
+  text-align: center;
+  font-family: "Century Gothic";
+  font-size: 18px;
+}

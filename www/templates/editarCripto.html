@@ -1,0 +1,90 @@
+{% extends "padre.html" %}
+
+{% block linkCSS %}
+<link rel="stylesheet" href="../static/css/editarCripto.css" />
+{% endblock %}
+
+
+{% block usuarioCuenta %}
+<!-- _________Tipo de Cuenta y acciones__________ -->
+
+{{ idUsuario.nombre }}
+
+{% endblock %}
+
+{% block accionesTipocuenta %}
+<!-- Acciones de Cuenta -->
+
+
+{% if idUsuario.tipo == "Anonimo" %}
+<li><a href="../registroInicio.php">Iniciarsesion</a></li>
+{% endif %}
+
+{% if idUsuario.tipo == "Registrado" %}
+<li><a href="">Opcion</a></li>
+{% endif %}
+
+{% if idUsuario.tipo == "Moderador" %}
+<li><a href="../comentarios.php">Borrar y Editar Comentarios</a></li>
+
+{% endif %}
+
+{% if idUsuario.tipo == "Gestor" %}
+<li><a href="../productos.php">Borrar y Editar Comentarios</a></li>
+<li><a href="../nuevaCripto.php">Añadir productos </a></li>
+
+{% endif %}
+
+{% if idUsuario.tipo == "Super" %}
+<li><a href="">Modficar Permisos</a></li>
+
+{% endif %}
+
+{% endblock %}
+
+
+
+{% block central %}
+<div class="ContenedorGlobal">
+    <main>
+
+        <div class="formulario">
+            
+            <h1>Cripto: {{ idCripto.nombre }}</h1>
+            <h2>Editar Comentario</h2>
+
+            <form action="../editarProducto.php?nomPro=&quot;{{ idCripto.nombre }}&quot;" method="post" class="RellenarDatos " id="formReseña" enctype="multipart/form-data">
+
+                <label>Nombre</label><br>
+                <input type="text" id="Nombre" name="Nombre" placeholder="Escriba el nombre" value="{{ idCripto.nombre }}"><br>
+                
+                <label>Descripcion</label><br><br>
+                <input type="text" id="descripcion" name="descripcion" placeholder="Escriba el Descripcion" value="{{ idCripto.descripcion }}"><br>
+
+                <label>Foto Portada</label><br>
+                <img src="{{ idCripto.ruta }}" />
+                
+                <input type="file" id="foto" name="foto" value="" required ><br>
+            
+
+                <input id="guardarEdicion" type="submit" name="guardarEdicion" value="Save">
+            </form>
+
+            
+            <form action="../editarProducto.php?nomPro=&quot;{{ idCripto.nombre }}&quot;" method="post" class="RellenarDatos " id="formReseña" enctype="multipart/form-data">
+
+              
+
+                <label>Añadir fotos galeria</label><br>
+                <input type="file" id="fotos" name="fotos" value=""  ><br>
+            
+
+                <input id="guardarGaleria" type="submit" name="guardarGaleria" value="Save">
+            </form>
+            
+          
+            
+        </div>        
+    </main>
+</div>
+{% endblock %}

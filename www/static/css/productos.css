@@ -1,0 +1,308 @@
+/*__________________________Header________________________*/
+
+header {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    gap: 1em;
+    grid-auto-rows: minmax(50px, auto);
+    align-items: stretch;
+    background-size: cover;
+    background-image: url("../image/fondo.jpg");
+    border-bottom: 10px solid rgba(252, 163, 17, 1);
+}
+
+/*_______________________Header-Logo_____________________*/
+
+.contenedor-logo {
+    margin-left: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.contenedor-logo>img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.contenedor-titulo-menu {
+    margin-top: 1em;
+    margin-right: 2em;
+    margin-bottom: 1em;
+    display: grid;
+    grid-template-rows: repeat(3fr);
+    border-top: 10px solid rgba(252, 163, 17, 1);
+}
+
+/*_____________Header Titulo_________________*/
+
+.contenedor-titulo {
+    grid-row: 1/4;
+    border-bottom: 10px solid rgba(252, 163, 17, 1);
+}
+
+.contenedor-titulo>h1 {
+    font-family: "Century Gothic";
+    padding-top: 1em;
+    text-align: center;
+    font-size: 80px;
+    font-weight: 200;
+}
+
+/*__________________Header Menu________________*/
+
+.contenedor-menu {
+    grid-row: 4/5;
+    background-color: rgba(20, 33, 61, 1);
+    padding-right: 1em;
+}
+
+.contenedor-menu img {
+    margin-top: 1em;
+    margin-right: 1em;
+    float: right;
+    width: 3em;
+    height: 3em;
+}
+
+.contenedor-menu nav {
+    width: 80%;
+    float: left;
+}
+
+.contenedor-menu>nav a {
+    text-decoration: none;
+    font-family: "Century Gothic";
+    color: inherit;
+    font-size: 15px;
+}
+
+.contenedor-menu>nav li {
+    display: inline-block;
+    margin-top: 1em;
+    width: 20%;
+    padding: 5px 10px;
+    background-color: #000;
+    border: 1px solid rgb(54, 54, 54);
+    color: #fff;
+    text-align: center;
+}
+
+.contenedor-menu li:hover {
+
+    background-color: rgba(252, 163, 17, 1);
+    color: white;
+}
+
+.boton_imprimir {
+    float: right;
+    text-decoration: none;
+    padding: 8px;
+    background-color: rgba(20, 33, 61, 1);
+    color: white;
+    border: 2px solid rgba(252, 163, 17, 1);
+}
+
+.boton_imprimir:hover {
+    background-color: rgba(252, 163, 17, 1);
+    color: black;
+}
+
+.content {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 80% 20%;
+    grid-auto-rows: minmax(100px, auto);
+    align-items: stretch;
+    border-bottom: 10px solid rgba(252, 163, 17, 1);
+}
+
+/* _____________________Menu Usuario _____________________ */
+.contenedorUsuario {
+    float: right;
+    list-style: none;
+}
+
+.opciones {
+    padding: 0;
+    margin: 0;
+    padding-top: 1em;
+    text-align: center;
+}
+
+.tituloCuenta {
+    background-color: #000;
+    color: rgba(229, 229, 229, 1);
+    display: block;
+    list-style: none;
+    padding: 10px 15px;
+    padding-right: 10px;
+    /* margin: 10px; */
+    text-decoration: none;
+    min-width: 100px;
+    min-height: 2em;
+
+}
+
+.opciones li a {
+    background-color: #000;
+    color: rgba(229, 229, 229, 1);
+    display: block;
+    list-style: none;
+    padding: 10px 15px;
+    padding-right: 10px;
+    /* margin: 10px; */
+    text-decoration: none;
+    min-width: 100px;
+
+
+}
+
+.botonSalirSesion {
+    background-color: #000;
+    color: rgba(229, 229, 229, 1);
+    display: block;
+    list-style: none;
+    padding: 10px 15px;
+    padding-right: 10px;
+    /* margin: 10px; */
+    text-decoration: none;
+    min-width: 100px;
+}
+
+.botonSalirSesion:hover {
+    background-color: rgba(252, 163, 17, 1);
+
+}
+
+
+.opciones li form {
+    background-color: #000;
+    color: rgba(229, 229, 229, 1);
+    display: block;
+    list-style: none;
+    padding: 10px 15px;
+    padding-right: 10px;
+    /* margin: 10px; */
+    text-decoration: none;
+    min-width: 100px;
+}
+
+.opciones li a:hover {
+    background-color: rgba(229, 229, 229, 1);
+}
+
+.opciones>li {
+    list-style: none;
+    float: left;
+}
+
+.opciones li ul {
+    list-style: none;
+    display: none;
+    position: absolute;
+    min-width: 100px;
+    margin-right: 10px;
+    padding-left: 0;
+
+}
+
+.opciones li:hover>ul {
+    display: block;
+    list-style: none;
+
+}
+
+.opciones li ul li {
+    position: relative;
+    list-style: none;
+
+}
+
+.opciones li ul li ul {
+    right: 110px;
+    top: 0px;
+}
+
+
+/*__________________________Main__________________*/
+
+
+main {
+    background-color: rgba(20, 33, 61, 1);
+    border-bottom: 10px solid rgba(252, 163, 17, 1);
+    display: flex;
+    flex-direction: column;
+
+}
+
+main h2{
+    color:rgba(252, 163, 17, 1);
+    padding-left: 3em;
+}
+ .ContProducto {
+    position: relative;
+}
+
+.ContProducto h2 {
+    margin-left: 2em;
+    color: rgba(252, 163, 17, 1);
+}
+
+.ContProducto div {
+    text-decoration: none;
+    /* flex-wrap: wrap; */
+    background-color: rgba(229, 229, 229, 1);
+    margin: 2em;
+    border-radius: 1em;
+    padding: 1em;
+}
+
+.ContProducto div h4 {
+    color: rgba(252, 163, 17, 1);
+}
+
+.ContProducto div p {
+
+    font-style: italic;
+}
+
+#botonModificarProducto {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 2em;
+    right: 100px;
+}
+
+#botonEliminarProducto {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 2em;
+    right: 60px;
+}
+
+
+
+
+/*__________________Footer____________________________*/
+
+footer {
+    width: 100%;
+    min-height: 4em;
+    padding-top: 2em;
+    height: auto;
+    background-color: #000;
+    color: #fff;
+}
+
+footer>p {
+    margin: 0;
+    text-align: center;
+    font-family: "Century Gothic";
+    font-size: 18px;
+}

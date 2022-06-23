@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UFT-8" />
+    <meta name="viwport" content="widht= device-width, initial-scale = 1.0" />
+    <title>CryptoShop</title>
+    {% block linkCSS %}
+    <link rel="stylesheet" href="../static/css/portada.css" />
+    {% endblock %}
+
+</head>
+
+<body>
+
+    <header id="Header-CryptoShop">
+        <div class="contenedor-logo">
+            <img src="../static/image/CryptoIcon.png" />
+        </div>
+        <div class="contenedor-titulo-menu">
+            <div class="contenedor-titulo">
+                <h1>Crypto Shop</h1>
+                <div class="contenedorUsuario">
+                    <ul class="opciones">
+                        <li><a class= "tituloCuenta" href="">
+                            {% block usuarioCuenta %}
+                            Cuenta: Anónimo
+                            {% endblock %}
+                        </a>
+                        <ul>
+                            <li><a href="../cuenta.php">Cuenta</a></li>
+                            <li><a href="">Acciones</a>
+                                <ul>
+                                    {% block accionesTipocuenta %}
+                                    <li><a href="">Opcion</a></li>
+                                    <li><a href="">Opcion</a></li>
+                                    <li><a href="">Opcion</a></li>
+                                    <li><a href="">Opcion</a></li>
+                                    {% endblock %}
+
+                                </ul>
+                            </li>
+                            <li><form action="../salirSesion.php" method="post" class="formSalirSesion">
+                                <input name="salirSesion" type="hidden">
+                               <input type="submit" value="Salir" class="botonSalirSesion"/>
+                            </form></li>
+                        </ul></li>
+    
+                    </ul>
+                </div>
+            </div>
+
+            
+
+            <div class="contenedor-menu">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="../portada.php">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="../portada.php">Servicios</a>
+                        </li>
+                        <li>
+                            <a href="../portada.php">Blog</a>
+                        </li>
+                        <li>
+                            <a href="../portada.php">Contacto</a>
+                        </li>
+                    </ul>
+                </nav>
+                <a href="#"><img src="static/image/facebook.png" /></a>
+                <a href="#"><img src="static/image/twitter.png" /></a>
+                <a href="#">
+                    <imag>
+                        </image>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    {% block central %}
+
+    <p> Centro de la plantilla</p>
+
+    {% endblock %}
+
+    <footer id="pie">
+        <p>
+            © Copyright 2022 Francisco Antonio Pino Munoz. Todos los derechos
+            reservados
+        </p>
+    </footer>
+</body>
+
+</html>
+
+{% block js %}
+
+{% endblock %}

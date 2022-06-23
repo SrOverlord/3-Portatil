@@ -1,0 +1,75 @@
+{% extends "padre.html" %}
+
+{% block linkCSS %}
+<link rel="stylesheet" href="../static/css/comentarios.css" />
+{% endblock %}
+
+
+{% block usuarioCuenta %}
+<!-- _________Tipo de Cuenta y acciones__________ -->
+
+{{ idUsuario.nombre }}
+
+{% endblock %}
+
+{% block accionesTipocuenta %}
+<!-- Acciones de Cuenta -->
+
+
+{% if idUsuario.tipo == "Anonimo" %}
+<li><a href="../registroInicio.php">Iniciarsesion</a></li>
+{% endif %}
+
+{% if idUsuario.tipo == "Registrado" %}
+<li><a href="">Opcion</a></li>
+{% endif %}
+
+{% if idUsuario.tipo == "Moderador" %}
+<li><a href="../comentarios.php">Borrar y Editar Comentarios</a></li>
+
+{% endif %}
+
+{% if idUsuario.tipo == "Gestor" %}
+<li><a href="../productos.php">Borrar y Editar Comentarios</a></li>
+<li><a href="../nuevaCripto.php">Añadir productos </a></li>
+
+{% endif %}
+
+{% if idUsuario.tipo == "Super" %}
+<li><a href="">Modficar Permisos</a></li>
+
+{% endif %}
+
+
+{% endblock %}
+
+
+{% block central %}
+
+    <h1>Comentarios Criptos</h1>
+<main>
+
+    {{ Comentarios['Bat']['nombre']}}
+
+    {% for key,comentario in Comentarios %}
+    
+        <h2>{{key}}</h2>
+    {% for aux in comentario %}
+    {% if aux['nombre'] != 'WWW' and aux['texto'] != 'TTTT' %}
+    <div class="ContComentario" >
+        <div>
+            <h4>{{aux['nombre']}}</h4>
+            <p>{{aux['texto']}}</p>
+            {% if idUsuario.tipo == "Moderador" %}
+            <a href="../editarComentario.php?idComentario={{aux['id']}}"><img id="botonModificarComentario" src="/static/image/lapiz.png"> </a>
+            <a href="../eliminarComentario.php?pro={{key}}&idComentario={{aux['id']}}&todos"><img id="botonEliminarComentario"src="/static/image/eliminar.png"> </a>
+            {% endif %}
+        </div>
+    </div>
+
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+</main>
+
+{% endblock %}

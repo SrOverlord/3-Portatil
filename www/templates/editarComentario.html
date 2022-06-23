@@ -1,0 +1,77 @@
+{% extends "padre.html" %}
+
+{% block linkCSS %}
+<link rel="stylesheet" href="../static/css/editarComentario.css" />
+{% endblock %}
+
+
+{% block usuarioCuenta %}
+<!-- _________Tipo de Cuenta y acciones__________ -->
+
+{{ idUsuario.nombre }}
+
+{% endblock %}
+
+{% block accionesTipocuenta %}
+<!-- Acciones de Cuenta -->
+
+
+{% if idUsuario.tipo == "Anonimo" %}
+<li><a href="../registroInicio.php">Iniciarsesion</a></li>
+{% endif %}
+
+{% if idUsuario.tipo == "Registrado" %}
+<li><a href="">Opcion</a></li>
+{% endif %}
+
+{% if idUsuario.tipo == "Moderador" %}
+<li><a href="../comentarios.php">Borrar y Editar Comentarios</a></li>
+
+{% endif %}
+
+{% if idUsuario.tipo == "Gestor" %}
+<li><a href="../productos.php">Borrar y Editar Comentarios</a></li>
+<li><a href="../nuevaCripto.php">Añadir productos </a></li>
+
+{% endif %}
+
+{% if idUsuario.tipo == "Super" %}
+<li><a href="">Modficar Permisos</a></li>
+
+{% endif %}
+
+
+{% endblock %}
+
+
+
+{% block central %}
+<div class="ContenedorGlobal">
+    <main>
+
+        <div class="formulario">
+            
+            <h1>Cripto: {{ nombrePro }}</h1>
+            <h2>Editar Comentario</h2>
+
+            <form action="../editarComentario.php?idComentario={{ idComentario.id }}" method="post" class="RellenarDatos " id="formReseña">
+                <!-- Informacion Usuario -->
+                <label>Nombre : {{ idComentario.nombre }}</label><br>
+                <label>Email: {{ idComentario.email }}</label><br>
+                <label>Date: {{ idComentario.date }}</label><br>
+                
+                <!-- En caso thaberlo modificado antes -->
+                {% if idComentario.modificado == "true" %}
+                <label class="comentarioMod" id="modificado"><i>Modificado Previamente</i></label><br>
+                {% endif %}
+                <input type="text" id="textoComentario" name="textoComentario" placeholder="Escriba el comentario" value="{{ idComentario.texto }}">
+                <input type="hidden" id="editarComentario" name="editarComentario"> 
+                <input id="guardarEdicion" type="submit" name="guardarEdicion" value="Save">
+            </form>
+            
+          
+            
+        </div>        
+    </main>
+</div>
+{% endblock %}
