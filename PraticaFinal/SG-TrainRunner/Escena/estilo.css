@@ -1,0 +1,51 @@
+#Mensaje{
+    position: absolute;
+    top: 1%;
+    left: 0%;
+    background-color: darkgrey;
+    border-radius: 2em;
+    padding: 5px;
+    float: left;
+}
+#Mensaje img{
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin: 5px;
+}
+
+
+#Mensaje-empezar{
+    position: absolute;
+    top: 85%;
+    left: 40%;
+    background-color: antiquewhite;
+    border: 2px solid black;
+    border-radius: 2em;
+    padding: 5px;
+    margin: 3px;
+
+}
+
+#Ayuda{
+    /* display: none; */
+    position: absolute;
+    border: 1px solid black;
+    background-color: antiquewhite;
+    text-align: center;
+    margin: 5px;
+    width: 20%;
+    top: 15%;
+    left: 0%;
+    display: none
+
+}
+
+.Marcador{
+    position: absolute;
+    background-color: azure;
+    border: 1px black;
+    top: 1%;
+    left: 1%;
+    width: 150px;
+}
