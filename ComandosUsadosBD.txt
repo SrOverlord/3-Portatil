@@ -1,0 +1,104 @@
+//Documento con los comandos usados para la creacion de tablas 
+
+ mysql -h 127.0.0.1 -P 3306 -u root -p     //Entrar con root
+	contraseña: tiger
+
+CREATE TABLE Criptos(
+     id INT AUTO_INCREMENT PRIMARY KEY,
+     nombre VARCHAR(100),
+     ruta VARCHAR(200)
+     );
+
+//Añadimos nueva columna
+alter table Criptos add descripcion varchar(200) default 'Descripcion por defecto :) ';
+
+//Sentencia eliminar criptos
+"DELETE from Criptos where id=$id;"
+    
+Create table FotosProducto(
+    idfoto int AUTO_INCREMENT PRIMARY KEY,
+    idproducto int,
+    foreign key (idproducto) references Criptos(id),
+    ruta VARCHAR(200)
+    );
+
+Create Table ComentarioProducto(
+     id int AUTO_INCREMENT PRIMARY KEY,
+idproducto int,
+    foreign key (idproducto) references Criptos(id),
+     nombre varchar(100),
+     email varchar(100),
+     date varchar(150),
+     texto varchar(200)
+    );
+
+
+//Buscamos solo la idProducto
+select disticnt idproducto from ComentarioProducto;
+
+//Añadimos nueva columna de modificado
+Alter table ComentarioProducto add modificado varchar(10) default 'false';
+
+Create Table Tacos(
+     taco varchar(50) primary key
+    );
+//Insertamos los tacos 
+MySQL [SIBW]> insert into Tacos (taco) values ("culo");
+Query OK, 1 row affected (0.016 sec)
+
+MySQL [SIBW]> insert into Tacos (taco) values ("payaso");
+Query OK, 1 row affected (0.018 sec)
+
+MySQL [SIBW]> insert into Tacos (taco) values ("tonto");
+Query OK, 1 row affected (0.006 sec)
+
+MySQL [SIBW]> insert into Tacos (taco) values ("idiota");
+Query OK, 1 row affected (0.016 sec)
+
+MySQL [SIBW]> insert into Tacos (taco) values ("cabron");
+Query OK, 1 row affected (0.016 sec)
+
+MySQL [SIBW]> insert into Tacos (taco) values ("gilipollas");
+Query OK, 1 row affected (0.018 sec)
+
+MySQL [SIBW]> insert into Tacos (taco) values ("estupido");
+Query OK, 1 row affected (0.017 sec)
+
+
+#Insetamos dos comentarios en la base de datos
+
+ Insert into ComentarioProducto (idproducto, nombre,email,date, texto) values (1,"Juan Perez","juanperez@gmai", "Lunes May 8 2022 20:20", " Ahora mismo esta en su tendencia alcista, es un  buen momento para comprar")
+
+Insert into ComentarioProducto (idproducto, nombre,email,date, texto) values (1,"Pepe Dominguez","pepedominguez@gmai", "Lunes May 8 2022 20:20", " Prueba <h1>hola<h1/> comprar")
+
+//Sentencia Insertar Comentarios
+Insert into ComentarioProducto (idproducto, nombre,email,date, texto) values ()
+
+
+
+//Creamos tabla de usuarios
+
+Create table Usuarios(
+    idUser int AUTO_INCREMENT PRIMARY KEY,
+    email varchar(100) UNIQUE,
+    nombre varchar(100),
+    contrasena varchar(100),
+    tipo varchar(100) default 'Registrado'
+    );
+
+
+//Actualizar Uusarios
+ Update Usuarios set email ='XXXXX' where idUser=5;
+ Update Usuarios set nombre ='fran@gmail.com' where idUser=5;
+ Update Usuarios set contrasena ='fran@gmail.com' where idUser=5;
+
+//Insertar Usuarios
+INSERT INTO Usuarios ( email, nombre , contrasena) VALUES ('fran@gmail', 'fran', '2310');
+
+INSERT INTO Usuarios ( email, nombre , contrasena, tipo) VALUES ('anonimo@gmail.com', 'Anonimo', '3333','Anonimo');
+
+INSERT INTO Usuarios ( email, nombre , contrasena, tipo) VALUES ('moderador@gmail.com', 'Moderador', '2222','Moderador');
+
+INSERT INTO Usuarios ( email, nombre , contrasena, tipo) VALUES ('gestor@gmail.com', 'Gestor', '1111','Gestor');
+
+INSERT INTO Usuarios ( email, nombre , contrasena, tipo) VALUES ('super@gmail.com', 'SuperUsuario', '0000','Super');
